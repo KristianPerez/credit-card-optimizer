@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Optimizer</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-100 p-4 sm:p-10 font-sans text-slate-800">
+
+    <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
+        
+        <div class="bg-blue-600 p-6 text-white text-center">
+            <h1 class="text-3xl font-extrabold tracking-tight text-white">Optimizer 💳</h1>
+            <p class="opacity-80 text-sm mt-1 text-blue-100">Kristian's Full Strategy Report</p>
+        </div>
+
+        <div class="p-6">
+            <div class="mb-10 max-w-sm mx-auto text-center">
+                <label class="block text-xs font-bold uppercase text-slate-500 mb-2 tracking-widest">Total Monthly Budget</label>
+                <div class="relative">
+                    <span class="absolute left-4 top-3 text-2xl text-slate-400">$</span>
+                    <input type="number" id="budget" class="w-full pl-10 pr-4 py-3 bg-blue-50 border-2 border-blue-200 rounded-xl text-2xl font-bold text-blue-700 text-center outline-none" placeholder="0.00">
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center">
+                    <div class="font-bold text-blue-700">Members Choice <span class="block text-[10px] font-normal text-slate-400">12.75% | Due 16th</span></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-1" class="money-input" value="728.31"></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-1" class="money-input" value="30"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center">
+                    <div class="font-bold text-green-700">Comerica (Elan) <span class="block text-[10px] font-normal text-slate-400">17.49% | Due 3rd</span></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-2" class="money-input" value="430.66"></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-2" class="money-input" value="48"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center">
+                    <div class="font-bold text-orange-600">Capital One Savor <span class="block text-[10px] font-normal text-slate-400">28.99% | Due 17th</span></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-3" class="money-input" value="254.45"></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-3" class="money-input" value="25"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center">
+                    <div class="font-bold text-slate-500">Silver Card <span class="block text-[10px] font-normal text-slate-400">0% Promo | Due 17th</span></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-4" class="money-input" value="878.68"></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-4" class="money-input" value="25"></div>
+                </div>
+            </div>
+
+            <button id="calculateBtn" class="w-full mt-10 bg-slate-800 text-white font-bold py-4 rounded-xl hover:bg-black shadow-lg active:scale-95 transition-all">
+                Calculate Final Plan 📊
+            </button>
+
+            <div id="results" class="mt-8 hidden overflow-hidden rounded-xl border-2 border-slate-200 shadow-inner">
+                <div class="bg-slate-800 p-3 text-white text-center font-bold text-xs uppercase tracking-widest">Strategy & Results</div>
+                <div id="resultList" class="p-6 bg-white space-y-8"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
