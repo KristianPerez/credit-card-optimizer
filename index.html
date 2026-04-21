@@ -12,8 +12,8 @@
     <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
         
         <div class="bg-blue-600 p-6 text-white text-center">
-            <h1 class="text-3xl font-extrabold tracking-tight text-white">Optimizer 💳</h1>
-            <p class="opacity-80 text-sm mt-1 text-blue-100">Kristian's Full Strategy Report</p>
+            <h1 class="text-3xl font-extrabold tracking-tight">Optimizer 💳</h1>
+            <p class="opacity-80 text-sm mt-1">Kristian's Debt-Free Strategy Engine</p>
         </div>
 
         <div class="p-6">
@@ -29,34 +29,40 @@
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center">
                     <div class="font-bold text-blue-700">Members Choice <span class="block text-[10px] font-normal text-slate-400">12.75% | Due 16th</span></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-1" class="money-input" value="728.31"></div>
-                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-1" class="money-input" value="30"></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-1" class="money-input" value="30.00"></div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center">
                     <div class="font-bold text-green-700">Comerica (Elan) <span class="block text-[10px] font-normal text-slate-400">17.49% | Due 3rd</span></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-2" class="money-input" value="479.79"></div>
-                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-2" class="money-input" value="48"></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-2" class="money-input" value="48.00"></div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center">
                     <div class="font-bold text-orange-600">Capital One Savor <span class="block text-[10px] font-normal text-slate-400">28.99% | Due 17th</span></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-3" class="money-input" value="254.45"></div>
-                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-3" class="money-input" value="25"></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-3" class="money-input" value="25.00"></div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center">
                     <div class="font-bold text-slate-500">Silver Card <span class="block text-[10px] font-normal text-slate-400">0% Promo | Due 17th</span></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-4" class="money-input" value="878.68"></div>
-                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-4" class="money-input" value="31"></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-4" class="money-input" value="31.00"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center shadow-sm border-indigo-100">
+                    <div class="font-bold text-indigo-700">Signature Loan <span class="block text-[10px] font-normal text-slate-400">10.24% | Due 16th</span></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-5" class="money-input" value="3890.30"></div>
+                    <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-5" class="money-input" value="135.90"></div>
                 </div>
             </div>
 
             <button id="calculateBtn" class="w-full mt-10 bg-slate-800 text-white font-bold py-4 rounded-xl hover:bg-black shadow-lg active:scale-95 transition-all">
-                Calculate Final Plan 📊
+                Calculate Payment Plan 📊
             </button>
 
-            <div id="results" class="mt-8 hidden overflow-hidden rounded-xl border-2 border-slate-200 shadow-inner">
-                <div class="bg-slate-800 p-3 text-white text-center font-bold text-xs uppercase tracking-widest">Strategy & Results</div>
+            <div id="results" class="mt-8 hidden overflow-hidden rounded-xl border-2 border-slate-200">
+                <div class="bg-slate-800 p-3 text-white text-center font-bold text-xs uppercase tracking-widest">Payment Strategy Breakdown</div>
                 <div id="resultList" class="p-6 bg-white space-y-8"></div>
             </div>
         </div>
