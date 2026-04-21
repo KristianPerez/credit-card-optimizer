@@ -1,27 +1,50 @@
-.money-input {
+.money-input, .percent-input {
     width: 100%;
-    padding-left: 1.75rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    padding-right: 0.75rem;
     border: 1px solid #e2e8f0;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     background-color: white;
     font-size: 0.875rem;
+    font-weight: 600;
     outline: none;
+    transition: all 0.2s;
 }
 
-.money-input:focus {
+.fixed-rate {
+    background-color: #f8fafc !important;
+    color: #2c3441ce;
+    cursor: not-allowed;
+    border-style: dashed;
+}
+
+.money-input { padding-left: 1.75rem; }
+.percent-input { padding-left: 1.5rem; }
+
+.money-input:focus:not([readonly]) {
     border-color: #3b82f6;
-    background-color: #f8fafc;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
-.currency-symbol {
+.currency-symbol, .percent-symbol {
     position: absolute;
-    left: 0.75rem;
-    top: 0.5rem;
-    color: #94a3b8;
-    font-size: 0.875rem;
+    top: 0.65rem;
+    color: #5b6a80;
+    font-size: 0.85rem;
     font-weight: bold;
+}
+
+.currency-symbol { left: 0.75rem; }
+.percent-symbol { left: 0.65rem; }
+
+.account-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.account-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
 }
 
 #calculateBtn:active {

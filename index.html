@@ -3,67 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credit Card Optimizer</title>
+    <title>Debt Optimizer - Kristian's Strategy</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate-100 p-4 sm:p-10 font-sans text-slate-800">
 
-    <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
         
-        <div class="bg-blue-600 p-6 text-white text-center">
-            <h1 class="text-3xl font-extrabold tracking-tight">Optimizer 💳</h1>
-            <p class="opacity-80 text-sm mt-1">Kristian's Debt-Free Strategy Engine</p>
+        <div class="bg-blue-600 p-8 text-white text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight">Debt Optimizer 💳</h1>
+            <p class="opacity-90 text-sm mt-2 font-medium">Locked Strategy: Manual Extras + Smart Waterfall</p>
         </div>
 
         <div class="p-6">
-            <div class="mb-10 max-w-sm mx-auto text-center">
-                <label class="block text-xs font-bold uppercase text-slate-500 mb-2 tracking-widest">Total Monthly Budget</label>
+            <div class="mb-10 max-w-md mx-auto text-center bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                <label for="budget" class="block text-xs font-black uppercase text-blue-600 mb-2 tracking-widest">Total Monthly Budget</label>
                 <div class="relative">
-                    <span class="absolute left-4 top-3 text-2xl text-slate-400">$</span>
-                    <input type="number" id="budget" class="w-full pl-10 pr-4 py-3 bg-blue-50 border-2 border-blue-200 rounded-xl text-2xl font-bold text-blue-700 text-center outline-none" placeholder="0.00">
+                    <span class="absolute left-4 top-3 text-2xl text-blue-300">$</span>
+                    <input type="number" id="budget" class="w-full pl-10 pr-4 py-3 bg-white border-2 border-blue-200 rounded-xl text-3xl font-bold text-blue-700 text-center outline-none focus:border-blue-500 transition-all" placeholder="0.00">
                 </div>
+                <p id="minTotalLabel" class="text-[10px] text-blue-400 mt-3 font-bold uppercase tracking-widest">Required Minimums Total: $269.90</p>
+            </div>
+
+            <div class="hidden lg:grid grid-cols-5 gap-4 px-6 mb-4 text-[10px] font-black uppercase text-slate-800 tracking-widest">
+                <div class="col-span-1">Account</div>
+                <div>Balance</div>
+                <div>APR (%)</div>
+                <div>Min. Payment</div>
+                <div class="text-blue-600">Manual Extra</div>
             </div>
 
             <div class="space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center">
-                    <div class="font-bold text-blue-700">Members Choice <span class="block text-[10px] font-normal text-slate-400">12.75% | Due 16th</span></div>
+                <div class="account-card grid grid-cols-1 lg:grid-cols-5 gap-4 p-5 bg-slate-50 rounded-2xl border border-red-200 items-center">
+                    <div class="flex flex-col"><span class="font-bold text-red-900 text-sm">Members Choice</span><span class="text-[9px] text-slate-400 uppercase">Due: 16th</span></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-1" class="money-input" value="728.31"></div>
+                    <div class="relative"><span class="percent-symbol">%</span><input type="number" id="apr-1" class="percent-input fixed-rate" value="12.75" readonly tabindex="-1"></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-1" class="money-input" value="30.00"></div>
+                    <div class="relative"><span class="currency-symbol text-blue-400">$</span><input type="number" id="extra-1" class="money-input border-blue-200 bg-blue-50 focus:bg-white" placeholder="0.00"></div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center">
-                    <div class="font-bold text-green-700">Comerica (Elan) <span class="block text-[10px] font-normal text-slate-400">17.49% | Due 3rd</span></div>
+                <div class="account-card grid grid-cols-1 lg:grid-cols-5 gap-4 p-5 bg-slate-50 rounded-2xl border border-blue-200 items-center">
+                    <div class="flex flex-col"><span class="font-bold text-blue-900 text-sm">Comerica (Elan)</span><span class="text-[9px] text-slate-400 uppercase">Due: 3rd</span></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-2" class="money-input" value="479.79"></div>
+                    <div class="relative"><span class="percent-symbol">%</span><input type="number" id="apr-2" class="percent-input fixed-rate" value="17.49" readonly tabindex="-1"></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-2" class="money-input" value="48.00"></div>
+                    <div class="relative"><span class="currency-symbol text-blue-400">$</span><input type="number" id="extra-2" class="money-input border-blue-200 bg-blue-50 focus:bg-white" placeholder="0.00"></div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center">
-                    <div class="font-bold text-orange-600">Capital One Savor <span class="block text-[10px] font-normal text-slate-400">28.99% | Due 17th</span></div>
+                <div class="account-card grid grid-cols-1 lg:grid-cols-5 gap-4 p-5 bg-slate-50 rounded-2xl border border-orange-200 items-center">
+                    <div class="flex flex-col"><span class="font-bold text-orange-700 text-sm">Cap One Savor</span><span class="text-[9px] text-slate-400 uppercase">Due: 17th</span></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-3" class="money-input" value="254.45"></div>
+                    <div class="relative"><span class="percent-symbol">%</span><input type="number" id="apr-3" class="percent-input fixed-rate" value="28.99" readonly tabindex="-1"></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-3" class="money-input" value="25.00"></div>
+                    <div class="relative"><span class="currency-symbol text-blue-400">$</span><input type="number" id="extra-3" class="money-input border-blue-200 bg-blue-50 focus:bg-white" placeholder="0.00"></div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center">
-                    <div class="font-bold text-slate-500">Silver Card <span class="block text-[10px] font-normal text-slate-400">0% Promo | Due 17th</span></div>
+                <div class="account-card grid grid-cols-1 lg:grid-cols-5 gap-4 p-5 bg-slate-50 rounded-2xl border border-slate-200 items-center">
+                    <div class="flex flex-col"><span class="font-bold text-slate-600 text-sm">Silver Card</span><span class="text-[9px] text-slate-400 uppercase">Due: 17th</span></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-4" class="money-input" value="878.68"></div>
+                    <div class="relative"><span class="percent-symbol">%</span><input type="number" id="apr-4" class="percent-input fixed-rate" value="0.00" readonly tabindex="-1"></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-4" class="money-input" value="31.00"></div>
+                    <div class="relative"><span class="currency-symbol text-blue-400">$</span><input type="number" id="extra-4" class="money-input border-blue-200 bg-blue-50 focus:bg-white" placeholder="0.00"></div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100 items-center shadow-sm border-indigo-100">
-                    <div class="font-bold text-indigo-700">Signature Loan <span class="block text-[10px] font-normal text-slate-400">10.24% | Due 16th</span></div>
+                <div class="account-card grid grid-cols-1 lg:grid-cols-5 gap-4 p-5 bg-slate-50 rounded-2xl border border-indigo-200 items-center shadow-sm">
+                    <div class="flex flex-col"><span class="font-bold text-indigo-700 text-sm">Signature Loan</span><span class="text-[9px] text-slate-400 uppercase">Due: 16th</span></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="balance-5" class="money-input" value="3890.30"></div>
+                    <div class="relative"><span class="percent-symbol">%</span><input type="number" id="apr-5" class="percent-input fixed-rate" value="10.24" readonly tabindex="-1"></div>
                     <div class="relative"><span class="currency-symbol">$</span><input type="number" id="min-5" class="money-input" value="135.90"></div>
+                    <div class="relative"><span class="currency-symbol text-blue-400">$</span><input type="number" id="extra-5" class="money-input border-blue-200 bg-blue-50 focus:bg-white" placeholder="0.00"></div>
                 </div>
             </div>
 
-            <button id="calculateBtn" class="w-full mt-10 bg-slate-800 text-white font-bold py-4 rounded-xl hover:bg-black shadow-lg active:scale-95 transition-all">
-                Calculate Payment Plan 📊
+            <button id="calculateBtn" class="w-full mt-10 bg-slate-900 text-white font-bold py-5 rounded-2xl hover:bg-black shadow-xl transition-all active:scale-95">
+                Calculate Strategy 📈
             </button>
 
-            <div id="results" class="mt-8 hidden overflow-hidden rounded-xl border-2 border-slate-200">
-                <div class="bg-slate-800 p-3 text-white text-center font-bold text-xs uppercase tracking-widest">Payment Strategy Breakdown</div>
-                <div id="resultList" class="p-6 bg-white space-y-8"></div>
+            <div id="results" class="mt-10 hidden overflow-hidden rounded-2xl border-2 border-slate-200 bg-white">
+                <div id="resultList" class="p-8 space-y-10"></div>
             </div>
         </div>
     </div>
